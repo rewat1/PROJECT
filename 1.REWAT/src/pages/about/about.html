@@ -1,0 +1,102 @@
+<ion-header>
+    <ion-navbar color="alcon-green">
+      <ion-title>
+        BMR ค่าดัชนีมวลกาย
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+      
+
+      <ion-list radio-group>
+      
+        <ion-list-header>
+            <h1>ข้อมูลส่วนตัว</h1>
+          </ion-list-header>
+    <ion-item>
+        <ion-label fixed>ส่วนสูง</ion-label>
+      <ion-input type="text" placeholder="กรุณากรอกข้อมูล" [(ngModel)]="height"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label fixed>น้ำหนัก</ion-label>
+        <ion-input type="text" placeholder="กรุณากรอกข้อมูล" [(ngModel)]="weight"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label fixed>อายุ</ion-label>
+        <ion-input type="text" placeholder="กรุณากรอกข้อมูล" [(ngModel)]="age"></ion-input>
+      </ion-item><br>
+  
+      <ion-list-header>
+          <h1>การออกกำลังกาย</h1>
+        </ion-list-header>
+      
+        <ion-item>
+          <ion-label>เพศชาย</ion-label>
+          <ion-radio checked="true" value="a" (click)="Bmi()"></ion-radio>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>เพศหญิง</ion-label>
+          <ion-radio value="b" (click)="Bmi1()"></ion-radio>
+        </ion-item>
+      </ion-list>
+
+  
+     
+    <ion-card>
+      <ion-card-header>
+       <ion-icon name="md-calculator" >ค่า BMR  </ion-icon>  
+       <ion-badge value="cal">{{bmi |number:'1.2-2'}}</ion-badge>
+         </ion-card-header>
+         <ion-card-header>
+            <ion-icon name="md-calculator" >ค่า BMR  </ion-icon>  
+               <ion-badge >{{bmi1 |number:'1.2-2'}}</ion-badge>
+              </ion-card-header>
+    </ion-card><br>
+  
+    <ion-list-header>
+        <h1>ค่า TDEE</h1>
+      </ion-list-header>
+    <ion-item>
+        <ion-label fixed>ค่า BMR</ion-label>
+      <ion-input type="text" placeholder="กรุณากรอกข้อมูล" [(ngModel)]="bmrr"></ion-input>
+    </ion-item>
+    <ion-list radio-group>
+        <ion-list-header>
+          <h1>การออกกำลังกาย</h1>
+        </ion-list-header>
+      
+        <ion-item>
+          <ion-label>น้อยครั้งหรือไม่ออกเลย</ion-label>
+          <ion-radio checked="true" value="ex1" (click)="Tdee1()" ></ion-radio>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>1-3 ครั้ง/สัปดาห์</ion-label>
+          <ion-radio value="ex12" (click)="Tdee2()"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>4-5 ครั้ง/สัปดาห์</ion-label>
+            <ion-radio value="ex3" (click)="Tdee3()"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+              <ion-label>6-7 ครั้ง/สัปดาห์</ion-label>
+              <ion-radio value="ex4" (click)="Tdee4()"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>วันละ 2 ครั้งขึ้นไป</ion-label>
+                <ion-radio value="ex5" (click)="Tdee5()"></ion-radio>
+              </ion-item>
+
+          
+
+      </ion-list>
+      <ion-card-header>
+          <ion-icon name="md-calculator" > พลังงานที่คุณใช้ต่อวัน </ion-icon>  
+          <ion-badge >{{tdee |number:'1.2-2'}}</ion-badge>
+            </ion-card-header>
+  </ion-content>
